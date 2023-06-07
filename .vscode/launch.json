@@ -22,11 +22,11 @@
       "deviceId": "emulator-5556"
     },
     {
-      "name": "iPone_12",
+      "name": "iPone_8",
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart",
-      "deviceId": "28555B1B-18C6-4ED3-8C26-FCBAB39E0B68"
+      "deviceId": "F49BE97B-C81F-4AC3-AA99-25911F73A8D2"
     }
   ],
   "compounds": [
