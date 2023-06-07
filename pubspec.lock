@@ -131,6 +131,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
+  pedantic_mono:
+    dependency: "direct dev"
+    description:
+      name: pedantic_mono
+      sha256: f06b0d77589c9af90a54867a39761ebad9f867a746a270982cdd6ee370b2ea27
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.22.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -193,5 +201,5 @@ packages:
     source: hosted
     version: "2.1.4"
 sdks:
-  dart: ">=3.0.0-0 <4.0.0"
+  dart: ">=3.0.0 <4.0.0"
   flutter: ">=3.0.0"
