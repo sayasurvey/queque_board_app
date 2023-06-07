@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'utils/tab_item.dart';
 
+/// タブごとのナビゲーションスタックの状態を管理する
 final _navigatorKeys = <TabItem, GlobalKey<NavigatorState>>{
   TabItem.person: GlobalKey<NavigatorState>(),
   TabItem.bookmarks: GlobalKey<NavigatorState>(),
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
   }
@@ -38,7 +40,38 @@ class MyHomePage extends HookWidget {
           centerTitle: true,
         ),
         body: const Center(
-          child: Text('ここにテキストフィールドが表示される。'),
+          child: Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              children: <Widget>[
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: '性',
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: '名',
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'メールアドレス',
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'パスワード',
+                  ),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'パスワード確認',
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
