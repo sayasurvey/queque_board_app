@@ -39,11 +39,22 @@ class MyHomePage extends HookWidget {
           title: Text('クエクエボード'),
           centerTitle: true,
         ),
-        body: const Center(
+        body: Center(
           child: Padding(
             padding: EdgeInsets.all(20.0),
             child: Column(
               children: <Widget>[
+                Row(
+                  children: [
+                    Text(
+                      'ユーザー登録',
+                      style: TextStyle(
+                        fontSize: 25.0, // font size
+                        fontWeight: FontWeight.bold, // make it bold
+                      ),
+                    ),
+                  ],
+                ),
                 TextField(
                   decoration: InputDecoration(
                     labelText: '性',
@@ -68,6 +79,16 @@ class MyHomePage extends HookWidget {
                   decoration: InputDecoration(
                     labelText: 'パスワード確認',
                   ),
+                ),
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        print('Button pressed!');
+                      },
+                      child: Text('Press me'),
+                    ),
+                  ],
                 ),
               ],
             ),
