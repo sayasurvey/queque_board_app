@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-enum BottomNavigationTab {
-  home(
+enum TabItem {
+  person(
     label: 'Person',
     icon: Icons.person,
   ),
 
-  timeline(
+  bookmarks(
     label: 'Bookmark',
     icon: Icons.bookmarks,
   ),
@@ -16,7 +16,7 @@ enum BottomNavigationTab {
     icon: Icons.settings,
   );
 
-  const BottomNavigationTab({
+  const TabItem({
     required this.label,
     required this.icon,
   });
