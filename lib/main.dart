@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'utils/tab_item.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// タブごとのナビゲーションスタックの状態を管理する
 final _navigatorKeys = <TabItem, GlobalKey<NavigatorState>>{
@@ -19,13 +20,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+    return ScreenUtilInit(
+      // iPhone8を基準に多端末帯を行う
+      designSize: const Size(750, 1334),
+      builder: (context, child) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          debugShowCheckedModeBanner: false,
+          home: MyHomePage(),
+        );
+      },
     );
   }
 }
@@ -40,57 +47,59 @@ class MyHomePage extends HookWidget {
           centerTitle: true,
         ),
         body: Center(
-          child: Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Column(
-              children: <Widget>[
-                Row(
-                  children: [
-                    Text(
-                      'ユーザー登録',
-                      style: TextStyle(
-                        fontSize: 25.0, // font size
-                        fontWeight: FontWeight.bold, // make it bold
+          child: Container(
+            child: Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: [
+                      Text(
+                        'ユーザー登録',
+                        style: TextStyle(
+                          fontSize: 25.0, // font size
+                          fontWeight: FontWeight.bold, // make it bold
+                        ),
                       ),
+                    ],
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: '性',
                     ),
-                  ],
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: '性',
                   ),
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: '名',
-                  ),
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'メールアドレス',
-                  ),
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'パスワード',
-                  ),
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: 'パスワード確認',
-                  ),
-                ),
-                Row(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        print('Button pressed!');
-                      },
-                      child: Text('Press me'),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: '名',
                     ),
-                  ],
-                ),
-              ],
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'メールアドレス',
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'パスワード',
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'パスワード確認',
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          print('Button pressed!');
+                        },
+                        child: Text('Press me'),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
