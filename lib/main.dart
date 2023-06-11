@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'utils/tab_item.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      // iPhone8を基準に多端末帯を行う
+      // iPhone8を基準に多端末対応を行う
       designSize: const Size(750, 1334),
       builder: (context, child) {
         return MaterialApp(
