@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      // iPhone8を基準に多端末対応を行う
+      /// iPhone8を基準に多端末対応を行う
       designSize: const Size(750, 1334),
       builder: (context, child) {
         return MaterialApp(
