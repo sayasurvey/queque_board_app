@@ -26,7 +26,8 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart",
-      "deviceId": "F49BE97B-C81F-4AC3-AA99-25911F73A8D2"
+      /// ビルドしたいiPhoneのUUIDを記載する
+      "deviceId": ""
     }
   ],
   "compounds": [
