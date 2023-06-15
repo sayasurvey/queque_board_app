@@ -22,66 +22,22 @@ class BasePage extends HookWidget {
           title: Text('クエクエボード'),
           centerTitle: true,
         ),
-        body: Center(
-          child: Container(
-            child: Padding(
-              padding: EdgeInsets.all(20.0),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: [
-                      Text(
-                        'ユーザー登録',
-                        style: TextStyle(
-                          fontSize: 25.0, // font size
-                          fontWeight: FontWeight.bold, // make it bold
-                        ),
-                      ),
-                    ],
+        body: Stack(
+          children: TabItem.values
+              .map(
+                (tabItem) => Offstage(
+                  offstage: currentTab.value != tabItem,
+                  child: Navigator(
+                    key: _navigatorKeys[tabItem],
+                    onGenerateRoute: (settings) {
+                      return MaterialPageRoute<Widget>(
+                        builder: (context) => tabItem.page,
+                      );
+                    },
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        labelText: '姓', border: OutlineInputBorder()),
-                    maxLength: 12,
-                    autofocus: true,
-                    // focus移動
-                    textInputAction: TextInputAction.next,
-                  ),
-                  SizedBox(height: 16.0),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: '名',
-                    ),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'メールアドレス',
-                    ),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      labelText: 'パスワード',
-                    ),
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'パスワード確認',
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          print('Button pressed!');
-                        },
-                        child: Text('登録'),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
+                ),
+              )
+              .toList(),
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
