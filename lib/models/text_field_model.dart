@@ -12,10 +12,7 @@ class TextFieldModel {
 /// ユーザー登録画面で使用するテキストフィールド
 List<TextFieldModel> registrationFields = [
   TextFieldModel(
-    title: '姓',
-  ),
-  TextFieldModel(
-    title: '名',
+    title: 'ニックネーム',
   ),
   TextFieldModel(
     title: 'メールアドレス',
