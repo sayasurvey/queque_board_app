@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:queque_board_app/models/text_field_model.dart';
+import 'package:queque_board_app/commonWidget/custom_textfield.dart';
 
 class UserRegistration extends StatelessWidget {
   @override
@@ -67,24 +68,6 @@ class _UserRegistrationFormState extends State<UserRegistrationForm> {
   Widget build(BuildContext context) {
     return CustomTextField(
       title: "",
-    );
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  final String title;
-
-  CustomTextField({
-    required this.title,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        labelText: title,
-        border: OutlineInputBorder(),
-      ),
     );
   }
 }
