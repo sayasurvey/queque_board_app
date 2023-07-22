@@ -6,35 +6,39 @@ class UserRegistration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 30.0), // 左右に30のmargin
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // 左詰め配置
-        children: <Widget>[
-          SizedBox(height: 20.0),
-          // ユーザー情報を入力するTextFieldを配置する。
-          Text(
-            'ユーザー登録',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          margin: EdgeInsets.symmetric(horizontal: 30.0), // 左右に30のmargin
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start, // 左詰め配置
+            children: <Widget>[
+              SizedBox(height: 20.0),
+              // ユーザー情報を入力するTextFieldを配置する。
+              Text(
+                'ユーザー登録',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 20.0),
+              TextFiledListView(),
+              SizedBox(height: 20.0),
+              Center(
+                // Add this
+                child: ElevatedButton(
+                  onPressed: () {
+                    print('Button pressed!');
+                  },
+                  child: Text('登録'),
+                ),
+              ), // And this
+            ],
           ),
-          SizedBox(height: 20.0),
-          TextFiledListView(),
-          SizedBox(height: 20.0),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                print('Button pressed!');
-              },
-              child: Text('登録'),
-            ),
-          ),
-        ],
+        ),
       ),
-    ));
+    );
   }
 }
 
