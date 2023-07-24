@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:queque_board_app/pages/base_page.dart';
+import 'package:queque_board_app/screen/base_page.dart';
 
 void main() {
   runApp(const MyApp());

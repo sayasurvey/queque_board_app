@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:queque_board_app/pages/person_page.dart';
-import 'package:queque_board_app/pages/bookmark_page.dart';
-import 'package:queque_board_app/pages/setting_page.dart';
+import 'package:queque_board_app/screen/person_page.dart';
+import 'package:queque_board_app/screen/bookmark_page.dart';
+import 'package:queque_board_app/screen/setting_page.dart';
 
 enum TabItem {
   person(label: 'Person', icon: Icons.person, page: PersonPage()),
