@@ -1,39 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:queque_board_app/models/text_field_model.dart';
+import 'package:queque_board_app/commonWidget/custom_textfield.dart';
 
 class UserRegistration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 30.0), // 左右に30のmargin
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // 左詰め配置
-        children: <Widget>[
-          SizedBox(height: 20.0),
-          // ユーザー情報を入力するTextFieldを配置する。
-          Text(
-            'ユーザー登録',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          margin: EdgeInsets.symmetric(horizontal: 30.0), // 左右に30のmargin
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start, // 左詰め配置
+            children: <Widget>[
+              SizedBox(height: 20.0),
+              // ユーザー情報を入力するTextFieldを配置する。
+              Text(
+                'ユーザー登録',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 20.0),
+              TextFiledListView(),
+              SizedBox(height: 20.0),
+              Center(
+                // Add this
+                child: ElevatedButton(
+                  onPressed: () {
+                    print('Button pressed!');
+                  },
+                  child: Text('登録'),
+                ),
+              ), // And this
+            ],
           ),
-          SizedBox(height: 20.0),
-          TextFiledListView(),
-          SizedBox(height: 20.0),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                print('Button pressed!');
-              },
-              child: Text('登録'),
-            ),
-          ),
-        ],
+        ),
       ),
-    ));
+    );
   }
 }
 
@@ -47,6 +52,7 @@ class TextFiledListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return CustomTextField(
           title: registrationFields[index].title,
+          validator: registrationFields[index].validator,
         );
       },
       separatorBuilder: (context, index) {
@@ -67,24 +73,11 @@ class _UserRegistrationFormState extends State<UserRegistrationForm> {
   Widget build(BuildContext context) {
     return CustomTextField(
       title: "",
-    );
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  final String title;
-
-  CustomTextField({
-    required this.title,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        labelText: title,
-        border: OutlineInputBorder(),
-      ),
+      validator: (String? value) {
+        return (value != null && value.contains('@'))
+            ? 'Do not use the @ char.'
+            : null;
+      },
     );
   }
 }
