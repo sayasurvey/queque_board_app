@@ -52,6 +52,7 @@ class TextFiledListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return CustomTextField(
           title: registrationFields[index].title,
+          validator: registrationFields[index].validator,
         );
       },
       separatorBuilder: (context, index) {
@@ -72,6 +73,11 @@ class _UserRegistrationFormState extends State<UserRegistrationForm> {
   Widget build(BuildContext context) {
     return CustomTextField(
       title: "",
+      validator: (String? value) {
+        return (value != null && value.contains('@'))
+            ? 'Do not use the @ char.'
+            : null;
+      },
     );
   }
 }
