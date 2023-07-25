@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:queque_board_app/screen/person_page.dart';
-import 'package:queque_board_app/components/bookmark_page.dart';
-import 'package:queque_board_app/screen/setting_page.dart';
+import 'package:queque_board_app/screen/user_setting.dart';
+import 'package:queque_board_app/screen/user_posts/timeline.dart';
+import 'package:queque_board_app/screen/user_setting/setting_page.dart';
 
 enum TabItem {
   settings(
