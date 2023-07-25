@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:queque_board_app/pages/person_page.dart';
-import 'package:queque_board_app/pages/bookmark_page.dart';
-import 'package:queque_board_app/pages/setting_page.dart';
+import 'package:queque_board_app/screen/person_page.dart';
+import 'package:queque_board_app/components/bookmark_page.dart';
+import 'package:queque_board_app/screen/setting_page.dart';
 
 enum TabItem {
-  person(label: 'Person', icon: Icons.person, page: PersonPage()),
-
+  settings(
+    label: 'Setting',
+    icon: Icons.settings,
+    page: SettingPage(),
+  ),
   bookmarks(
     label: 'Bookmark',
     icon: Icons.bookmarks,
     page: BookmarkPage(),
   ),
 
-  settings(
-    label: 'Setting',
-    icon: Icons.settings,
-    page: SettingPage(),
-  );
+  person(label: 'Person', icon: Icons.person, page: PersonPage());
 
   const TabItem({
     required this.label,
