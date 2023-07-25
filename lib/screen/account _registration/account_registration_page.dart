@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:queque_board_app/components/text_field_model.dart';
-import 'package:queque_board_app/components/custom_textfield.dart';
+import 'package:queque_board_app/view_model/text_field_model.dart';
+import 'package:queque_board_app/components/util/custom_textfield.dart';
 
 class UserRegistration extends StatelessWidget {
   @override

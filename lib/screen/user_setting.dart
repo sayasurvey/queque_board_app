@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:queque_board_app/screen/user_register_page.dart';
+import 'package:queque_board_app/screen/account%20_registration/account_registration_page.dart';
 
 class PersonPage extends StatelessWidget {
   const PersonPage({Key? key}) : super(key: key);
