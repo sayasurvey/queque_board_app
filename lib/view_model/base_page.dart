@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:queque_board_app/view_model/tab_item.dart';
+import 'package:queque_board_app/model/button_tab_model.dart';
 
 /// タブごとのナビゲーションスタックの状態を管理する
 final _navigatorKeys = <TabItem, GlobalKey<NavigatorState>>{
