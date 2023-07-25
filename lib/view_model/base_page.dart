@@ -18,7 +18,7 @@ class BasePage extends HookWidget {
   Widget build(BuildContext context) {
     final currentTab = useState(TabItem.person);
     return Scaffold(
-        appBar: AppBar(centerTitle: true, title: const Text('🐥')),
+        appBar: AppBar(centerTitle: true, title: const Text('🐥 🐥 🐥')),
         body: Stack(
           children: TabItem.values
               .map(
